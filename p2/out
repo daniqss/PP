@@ -1,0 +1,34 @@
+OCaml version 5.0.0
+Enter #help;; for help.
+
+val x : int = 1
+val y : int = 2
+- : int = 0
+- : int = -1
+- : int = 6
+- : int -> int = <fun>
+- : int = 6
+- : int = 5
+val f : int -> int = <fun>
+- : int -> int = <fun>
+- : int = 6
+- : int = 5
+- : int = 2
+val x : int = 100
+- : int = 200
+val m : int = 1000
+val g : int -> int = <fun>
+- : int -> int = <fun>
+- : int = 1003
+val iscero_v2 : int -> bool = <fun>
+- : bool = true
+- : bool = false
+val all_to_true : bool -> bool = <fun>
+- : bool = true
+- : bool = true
+val first_all_to_true : bool -> bool = <fun>
+val all_to_true : 'a -> bool = <fun>
+- : bool = true
+- : bool = true
+- : bool = true
+
