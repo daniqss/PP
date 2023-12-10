@@ -21,4 +21,7 @@ let bst criterio list =
     | h :: t -> aux (insert criterio acc h) t
   in aux Empty list
 
-                 
+  
+let qsort criterio = function
+  | [] -> []
+  | h :: t -> in_order (bst criterio (h :: t));;

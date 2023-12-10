@@ -6,6 +6,4 @@ val insert : ('a -> 'a -> bool) -> 'a bintree -> 'a -> 'a bintree
 
 val bst : ('a -> 'a -> bool) -> 'a list -> 'a bintree
 
-(*
 val qsort : ('a -> 'a -> bool) -> 'a list -> 'a list
-*)
