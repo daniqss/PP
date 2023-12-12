@@ -25,17 +25,14 @@ let is_queens_sol n l =
         | (i, j) :: tail ->
             if i < 1 || i > n || j < 1 || j > n then false
             else check_range tail
-        in
-        if not (check_range l) then false
-        else
-        let rec check_attack l =
+        in if not (check_range l) then false
+        else let rec check_attack l =
             match l with
             | [] -> true
             | p :: tail ->
             if not (compatible p tail) then false
             else check_attack tail
-        in
-        check_attack l
+        in check_attack l
 ;;
 
 
