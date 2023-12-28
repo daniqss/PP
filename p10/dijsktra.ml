@@ -41,14 +41,14 @@ let dijkstra (m: matrix) : matrix =
     | Some (prio, u, q') ->
       q := q';
       for v = 0 to size - 1 do
-        match m.(u).(v), d.(0).(u) with
+        match m.(u).(v), d.(u).(u) with
         | Some w, Some du ->
-          (match d.(0).(v) with
+          (match d.(u).(v) with
            | Some dv when dv > du + w ->
-             d.(0).(v) <- Some (du + w);
+             d.(u).(v) <- Some (du + w);
              q := insert !q (du + w) v  (* Actualizar la cola de prioridad con la nueva distancia *)
            | None ->
-             d.(0).(v) <- Some (du + w);
+             d.(u).(v) <- Some (du + w);
              q := insert !q (du + w) v  (* Agregar el nuevo nodo a la cola de prioridad *)
            | _ -> ());
         | _ -> ()
@@ -62,10 +62,11 @@ let v1 =
     [|Some 3; Some 0; None|];
     [|Some 0; Some 2; None|]|];;
     
-let sol1 =
-[|[|Some 0; Some 1; Some 2|]; 
-  [|Some 3; Some 0; Some 5|];
-  [|Some 0; Some 1; Some 0|]|];;
+ let sol1 =
+ [|[|Some 0; Some 1; Some 2|]; 
+   [|Some 3; Some 0; Some 5|];
+   [|Some 0; Some 1; Some 0|]|];;
+ 
    
 let print_matrix m =
   Array.iter (fun i ->
@@ -91,4 +92,5 @@ let check_result result expected =
 
 
 print_matrix v1;;
+print_matrix sol1;;
 let result = dijkstra v1 in print_matrix result;;
