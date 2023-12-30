@@ -56,35 +56,16 @@ let print_matrix m =
   print_newline ()
 ;;
 
-let check_result result expected =
-  let aux = ref true in
-  Array.iteri (fun i row ->
-    Array.iteri (fun j value ->
-      if result.(i).(j) <> expected.(i).(j) then aux := false
-    ) row;
-  ) result;
-  !aux
-;;
-
 let dijkstra (m: matrix) : matrix =
   valid m;
   let size = Array.length m in
   let d = Array.make_matrix size size None in
   let q = ref empty in
 
-  for i = 0 to size - 1 do
-    d.(i).(i) <- Some 0;  (* Inicializar la distancia desde un nodo a sí mismo como 0 *)
-    q := insert !q 0 i
-  done;
-
   Array.iteri (fun i row ->
-    d.(i).(i) <- Some 0;  (* Inicializar la distancia desde un nodo a sí mismo como 0 *)
+    d.(i).(i) <- Some 0;   (* Inicializar la distancia desde un nodo a sí mismo como 0 *)
     q := insert !q 0 i  
   ) d;
-
-  print_matrix d;
-  print_matrix m;
-  (* print_matrix !q; *)
 
   while !q <> Empty do
     match extract !q with
@@ -111,6 +92,7 @@ let dijkstra (m: matrix) : matrix =
 (*
 ====================
    TESTS 
+   La función falla en los casos en los que no hay un camino entre dos nodos.
 ====================
 *)
 let v1 = 
