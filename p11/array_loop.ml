@@ -93,6 +93,7 @@ let find_opt fn array =
   let len = Array.length array in
   let aux = ref None in
   let i = ref 0 in
+  
   while !aux = None && !i < len - 1 do
     if fn array.(!i) then
       aux := Some array.(!i);

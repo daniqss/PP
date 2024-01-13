@@ -128,6 +128,18 @@ let v2 =
     [|Some 0; Some 0; Some 2; Some 0|]|]
 ;;
 
+let print_matrix m =
+  Array.iter (fun i ->
+    Array.iter (fun j ->
+      match j with
+      | Some x -> Printf.printf "%d " x
+      | None -> Printf.printf "None "
+    ) i;
+    print_newline ();
+  ) m;
+  print_newline ()
+;;
+
 let result = dijkstra v2;;
 Printf.printf "====== TEST 2 ======\n";;
 print_matrix v2;;
