@@ -1,4 +1,5 @@
 # Paradigmas de la Programación
+Grado en Ingeniería Informática 23/24
 
 ## Enunciados
 - [P1](./p1/README.md)
