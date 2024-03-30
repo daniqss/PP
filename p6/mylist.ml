@@ -1,3 +1,5 @@
+(* La mitad de las funciones no son tail recursive, cuidado💀 *)
+
 let hd = function
 [] -> raise(Failure "hd")
 | head::_ -> head
