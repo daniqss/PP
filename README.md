@@ -15,4 +15,4 @@
 
 ## Resumen
 Resumen para el examen final
-[Resumen](./paradigmas_resumen.md)
+- [Resumen](./paradigmas_resumen.md)
